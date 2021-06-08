@@ -23,16 +23,16 @@ noreferrerLinks = true
 [Permalinks]
 posts = "/:year/:filename/"
 
-[menu]
-[[menu.main]]
-name = "Blog"
-url = "/posts/"
-weight = 1
+# [menu]
+# [[menu.main]]
+# name = "Blog"
+# url = "/posts/"
+# weight = 1
 
-[[menu.main]]
-name = "Categories"
-url = "/categories/"
-weight = 3
+# [[menu.main]]
+# name = "Categories"
+# url = "/categories/"
+# weight = 3
 
 [[menu.main]]
 name = "About"
@@ -42,7 +42,7 @@ weight = 4
 [params]
 since = 2021
 author = "MuhammetAliAKBAY"               # Author's name
-subtitle = "Bio."       # Subtitle
+subtitle = "Writes some codes."       # Subtitle
 cdn_url = ""           # Base CDN URL
 home_mode = "" # post or other
 dateFormatToUse = "" # set date format, default "2 January 2006"
