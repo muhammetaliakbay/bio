@@ -223,9 +223,14 @@
       "keywords": ["EVM", "IPFS", "Cryptography"]
     },
     {
-      "name": "Machine Learning",
+      "name": "AWS",
       "level": "Mid",
-      "keywords": ["NLP", "Vector Databases"]
+      "keywords": ["DynamoDB", "Lambda", "API Gateway", "AppSync"]
+    },
+    {
+      "name": "Rust",
+      "level": "Junior",
+      "keywords": []
     }
   ],
   "languages": [

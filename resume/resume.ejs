@@ -123,6 +123,13 @@ const marked = require('marked');
                         flex-direction: column;
                         justify-content: start;
                         gap: 10px;
+                        width: min-content;
+                    }
+                    .competencies > span {
+                        white-space: nowrap;
+                    }
+                    .competencies > span:not(:last-child)::after {
+                        content: ','
                     }
                 </style>
     
@@ -160,14 +167,14 @@ const marked = require('marked');
                     </div>
                     <div class="card">
                         <h2>COMPETENCIES</h2>
-                        <ul>
-                            <% for (const skill of data.skills) { %>
-                                <h3><%= skill.name %> (<%= skill.level %>)</h3>
-                                <% for (const keyword of skill.keywords) { %>
-                                    <li><%= keyword %></li>
-                                <% } %>
+                        <% for (const skill of data.skills) { %>
+                            <h3><%= skill.name %> (<%= skill.level %>)</h3>
+                            <p class="competencies">
+                            <% for (const keyword of skill.keywords) { %>
+                                <span><%= keyword %></span>
                             <% } %>
-                        </ul>
+                            </p>
+                        <% } %>
                     </div>
                     <div class="card">
                         <h2>REFERENCES</h2>
@@ -193,7 +200,7 @@ const marked = require('marked');
                         display: flex;
                         flex-direction: column;
                         justify-content: start;
-                        gap: 20px;
+                        gap: 30px;
                     }
                 </style>
                 <div class="content">
@@ -238,12 +245,12 @@ const marked = require('marked');
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
-                            gap: 20px;
+                            gap: 15px;
                         }
                         strong {
                             font-weight: bolder;
                             color: rgb(15, 15, 15);
-                            font-size: 110%;
+                            font-size: 105%;
                         }
                     </style>
                     <div class="card">
@@ -271,13 +278,16 @@ const marked = require('marked');
                         </div>
                     </div>
                     <style>
+                        .eul.edu {
+                            margin-bottom: 20px;
+                        }
                         .eul.edu li {
                             width: calc((100%)/2 - 7.5px);
                         }
                     </style>
                     <div class="card">
                         <h2>EDUCATION</h2>
-                        <h3>DEGREES</h3>
+                        <h3 class="edu">DEGREES</h3>
                         <ul class="eul edu">
                             <% for (const education of data.education) { %>
                                 <li class="experience" style="padding-bottom: 10px;">
@@ -291,7 +301,7 @@ const marked = require('marked');
                                 </li>
                             <% } %>
                         </ul>
-                        <h3>CERTIFICATES</h3>
+                        <h3 class="edu">CERTIFICATES</h3>
                         <ul class="eul edu">
                             <% for (const certificate of data.certificates) { %>
                                 <li class="experience" style="padding-bottom: 10px;">
