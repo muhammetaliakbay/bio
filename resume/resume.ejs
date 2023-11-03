@@ -259,10 +259,7 @@ const marked = require('marked');
                             <% for (const experience of data.work) { %>
                                 <div class="experience">
                                     <div class="head">
-                                        <span><%= [
-                                            experience.position,
-                                            experience.name,
-                                        ].filter(val => val).join(', ') %></span>
+                                        <span><%= experience.position %><% if (experience.name) { %>, <a href="<%= experience.url %>"><%= experience.name %></a><% } %> </span>
                                         <span><%= [
                                             experience.startDate,
                                             experience.endDate,
