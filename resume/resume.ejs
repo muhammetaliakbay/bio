@@ -1,0 +1,310 @@
+<%
+const dateFns = require('date-fns');
+const marked = require('marked');
+%>
+
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pathway Extreme">
+    <style>
+        @media print {
+            body, page {
+                margin: 0;
+                box-shadow: 0;
+            }
+        }
+        body {
+            margin: 0;
+            font-size: 11px;
+        }
+        a {
+            color: inherit;
+        }
+        page.container {
+            display: flex;
+            flex-direction: column;
+            font-family: "Pathway Extreme";
+            color: rgb(90, 90, 90);
+            align-items: stretch;
+            width: 21cm;
+            height: 29.7cm; 
+        }
+        h2 {
+            font-size: inherit;
+            font-weight: bold;
+            margin: 0px;
+            color: rgb(15, 15, 15);
+        }
+        h2::after {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: rgb(15, 15, 15);
+            content: '';
+            margin-bottom: 6px;
+            line-height: inherit;
+        }
+        h3 {
+            font-size: inherit;
+            font-weight: bold;
+            line-height: inherit;
+            margin-bottom: 0;
+            color: rgb(15, 15, 15);
+        }
+        p {
+            line-height: inherit;
+            margin-top: 3px;
+        }
+        ul {
+            margin-top: 3px;
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            position: relative;
+        }
+        b {
+            color: rgb(15, 15, 15);
+        }
+    </style>
+    <body>
+        <page class="container">
+            <style>
+                .header {
+                    padding: 1cm;
+                    padding-bottom: 15px;
+                    position: relative;
+                    background-color: antiquewhite;
+                }
+                .header .name {
+                    font-size: 150%;
+                    font-weight: bold;
+                    color: rgb(15, 15, 15);
+                }
+                .header .title {
+                    display: block;
+                    margin-top: 10px;
+                }
+                .header img {
+                    height: calc(100% - 30px);
+                    position: absolute;
+                    right: 15px;
+                    top: 15px;
+                }
+            </style>
+            <div class="header">
+                <span class="name"><%= data.basics.firstName %></span><br/>
+                <span class="name"><%= data.basics.lastName %></span><br/>
+                <span class="title"><%= data.basics.label %></span>
+                <img src="<%= data.basics.image %>" />
+            </div>
+    
+            <style>
+                .body {
+                    padding: 1cm;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    display: flex;
+                    flex-direction: row;
+                    flex: 1;
+                    border-top: 2px solid rgba(0, 0, 0, 0.1);
+                    background-color: white;
+                }
+            </style>
+            <div class="body">
+                <style>
+                    .summary {
+                        align-self: stretch;
+                        padding-right: 15px;
+                        padding-top: 0.5cm;
+                        padding-bottom: 0.5cm;
+                        border-right: 2px solid rgba(0, 0, 0, 0.1);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: start;
+                        gap: 10px;
+                    }
+                </style>
+    
+                <div class="summary">
+                    <div class="card">
+                        <h2>DETAILS</h2>
+
+                        <h3>ADDRESS</h3>
+                        <p><%= data.basics.location.postalCode %>, <%= data.basics.location.city %></p>
+
+                        <h3>PHONE</h3>
+                        <p><%= data.basics.phone %></p>
+
+                        <h3>EMAIL</h3>
+                        <p><a href="mailto:<%= data.basics.email %>">
+                            <%= data.basics.email.split('@')[0] %>@
+                            <br />
+                            <%= data.basics.email.split('@')[1] %>
+                        </a></p>
+
+                        <h3>WEBSITES</h3>
+                        <ul>
+                            <% for (const profile of data.basics.profiles) { %>
+                                <li><a href="<%= profile.url %>"><%= profile.urlName %></a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h2>LANGUAGES</h2>
+                        <ul>
+                            <% for (const language of data.languages) { %>
+                                <li><%= language.language %> (<%= language.fluency %>)</li>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h2>COMPETENCIES</h2>
+                        <ul>
+                            <% for (const skill of data.skills) { %>
+                                <h3><%= skill.name %> (<%= skill.level %>)</h3>
+                                <% for (const keyword of skill.keywords) { %>
+                                    <li><%= keyword %></li>
+                                <% } %>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h2>REFERENCES</h2>
+                        <% for (const reference of data.references) { %>
+                            <h3><%= reference.name %></h3>
+                            <ul>
+                                <li><%= reference.title %></li>
+                                <li><%= reference.work %></li>
+                                <li><%= reference.contact %></li>
+                            </ul>
+                        <% } %>
+                    </div>
+                </div>
+        
+                <style>
+                    .content {
+                        flex: 1;
+                        align-self: stretch;
+                        padding-top: 0.5cm;
+                        padding-bottom: 1cm;
+                        padding-left: 0.5cm;
+                        
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: start;
+                        gap: 20px;
+                    }
+                </style>
+                <div class="content">
+                    <style>
+                        .content .separator {
+                            height: 2px;
+                            background-color: rgba(0, 0, 0, 0.1);
+                        }
+                    </style>
+                    <style>
+                        .experience .head {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .experience .head span:first-child {
+                            font-weight: bold;
+                            color: rgb(15, 15, 15);
+                        }
+                        .experience .head span:last-child {
+                            font-weight: bold;
+                        }
+                        .eul {
+                            margin-top: 5px;
+                            padding-left: 15px;
+                            position: relative;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                        }
+                        .eul li {
+                            width: calc((100%)/3 - 7.5px);
+                        }
+                        .eul li::before {
+                            position: absolute;
+                            left: -10px; 
+                            top: 7px; 
+                            content: '⬤';
+                            font-size: 2px;
+                        }
+                        .experiences {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            gap: 20px;
+                        }
+                        strong {
+                            font-weight: bolder;
+                            color: rgb(15, 15, 15);
+                            font-size: 110%;
+                        }
+                    </style>
+                    <div class="card">
+                        <h2>EXPERIENCE</h2>
+                        <div class="experiences">
+                            <% for (const experience of data.work) { %>
+                                <div class="experience">
+                                    <div class="head">
+                                        <span><%= [
+                                            experience.position,
+                                            experience.name,
+                                        ].filter(val => val).join(', ') %></span>
+                                        <span><%= [
+                                            experience.startDate,
+                                            experience.endDate,
+                                        ].filter(val => val).map(val => dateFns.format(new Date(val), 'MMM yyyy')).join(' - ') %> / <%= experience.location %></span>
+                                    </div>
+                                    <ul class="eul">
+                                        <% for (const highlight of experience.highlights) { %>
+                                            <li><%- marked.parseInline(highlight) %></li>
+                                        <% } %>
+                                    </ul>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <style>
+                        .eul.edu li {
+                            width: calc((100%)/2 - 7.5px);
+                        }
+                    </style>
+                    <div class="card">
+                        <h2>EDUCATION</h2>
+                        <h3>DEGREES</h3>
+                        <ul class="eul edu">
+                            <% for (const education of data.education) { %>
+                                <li class="experience" style="padding-bottom: 10px;">
+                                    <div class="head">
+                                        <span><%= education.studyType %>, <%= education.area %></span>
+                                        <span><%= [
+                                            education.startDate,
+                                            education.endDate,
+                                        ].filter(val => val).map(val => dateFns.format(new Date(val), 'yyyy')).join(' - ') %> / <%= education.institution %> / <%= education.location %></span>
+                                    </div>
+                                </li>
+                            <% } %>
+                        </ul>
+                        <h3>CERTIFICATES</h3>
+                        <ul class="eul edu">
+                            <% for (const certificate of data.certificates) { %>
+                                <li class="experience" style="padding-bottom: 10px;">
+                                    <div class="head">
+                                        <span><% if (certificate.url) {%><a href="<%= certificate.url %>"><%= certificate.name %></a><% } else { %> <%= certificate.name %> <% } %></span>
+                                        <span><%= dateFns.format(new Date(certificate.date), 'yyyy') %> / <%= certificate.type %> / <%= certificate.issuer %></span>
+                                    </div>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </page>
+    </body>
+</html>

@@ -1,0 +1,279 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Muhammet Ali AKBAY",
+    "firstName": "Muhammet Ali",
+    "lastName": "AKBAY",
+    "label": "Backend Developer",
+    "image": "static/image.jpeg",
+    "email": "business@muhammetaliakbay.com",
+    "phone": "+49 163 372 7767",
+    "url": "https://muhammetaliakbay.com",
+    "urlName": "muhammetaliakbay.com",
+    "summary": "",
+    "location": {
+      "postalCode": "22299",
+      "city": "Hamburg",
+      "countryCode": "DE"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "muhammetaliakbay",
+        "url": "https://github.com/muhammetaliakbay",
+        "urlName": "github/muhammetaliakbay"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "muhammet-ali-akbay",
+        "url": "https://linkedin.com/in/muhammet-ali-akbay",
+        "urlName": "in/muhammet-ali-akbay"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Finoa GmbH",
+      "location": "Berlin",
+      "description": "",
+      "position": "Software Engineer",
+      "url": "https://www.finoa.io",
+      "startDate": "2022-08-01",
+      "summary": "Providing security first crypto-custody services",
+      "highlights": [
+        "Microservice development with **Go**, **NodeJS**, **C++**",
+        "Developing and maintaining API gateways with **NestJS**",
+        "Working with **HSM** devices through **Go** APIs",
+        "Integrations with blockchain technologies",
+        "Developing **EIP-1193** provider implementation"
+      ]
+    },
+    {
+      "name": "collect Artificial Intelligence GmbH",
+      "location": "Hamburg",
+      "description": "",
+      "position": "Senior Software Developer",
+      "url": "https://www.collect.ai",
+      "startDate": "2021-10-01",
+      "endDate": "2022-08-01",
+      "summary": "Helping businesses to trace customer invoices and payments",
+      "highlights": [
+        "Secure and reliable microservice development",
+        "Working with **Go** and **NodeJS** codebases",
+        "**Kubernetes** cluster management"
+      ]
+    },
+    {
+      "name": "BLOCK CODE LTD",
+      "location": "London",
+      "description": "",
+      "position": "Software Developer",
+      "url": "https://plutus.it",
+      "startDate": "2021-06-01",
+      "endDate": "2021-10-01",
+      "summary": "A next generation finance app with its own crypto token",
+      "highlights": [
+        "Database design with **PostgreSQL** and **GraphQL**",
+        "Microservice development with **NodeJS**",
+        "Programming autonomous exchange bots"
+      ]
+    },
+    {
+      "name": "BC Development Labs GmbH",
+      "location": "Mittweida",
+      "description": "",
+      "position": "Blockchain Developer",
+      "url": "https://www.blockchains.com",
+      "startDate": "2020-12-01",
+      "endDate": "2021-06-01",
+      "summary": "Helping businesses to transform into blockchain technologies",
+      "highlights": [
+        "Smart contracts development with **Solidity**",
+        "Microservice development with **Go** and **NodeJS**",
+        "Preparing microservices to be deployed in **Kubernetes**"
+      ]
+    },
+    {
+      "location": "Istanbul",
+      "description": "",
+      "position": "Freelance Web Developer",
+      "url": "https://www.freelancer.com/u/maakbay",
+      "startDate": "2018-04-01",
+      "endDate": "2020-12-01",
+      "summary": "Fullstack web and desktop app development for individual customers",
+      "highlights": [
+        "**NodeJS** services and **React** user interface development",
+        "**Java** development with **Spring**",
+        "CI/CD development and maintenance"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of London",
+      "location": "UK",
+      "url": "https://www.london.ac.uk",
+      "area": "Computer Science",
+      "studyType": "Bachelor (Continues)",
+      "startDate": "2021-10-01",
+      "endDate": "2024-10-01",
+      "courses": [
+        "Introduction to Programming I",
+        "Discrete Mathematics",
+        "Fundamentals of Computer Science",
+        "How Computers Work",
+        "Introduction to Programming II",
+        "Computational Mathematics",
+        "Algorithms and Data Structures I",
+        "Web Development",
+        "Object Oriented Programming",
+        "Agile Software Projects",
+        "Computer Security",
+        "Algorithms and Data Structures II"
+      ]
+    },
+    {
+      "institution": "University of the People",
+      "location": "US",
+      "url": "https://www.uopeople.edu",
+      "area": "Computer Science",
+      "studyType": "Bachelor (Left)",
+      "startDate": "2021-01-01",
+      "endDate": "2021-10-01",
+      "courses": [
+        "English Composition 1",
+        "Programming Fundamentals",
+        "Online Education Strategies"
+      ]
+    },
+    {
+      "institution": "Anadolu University",
+      "location": "Turkey",
+      "url": "https://www.anadolu.edu.tr/en",
+      "area": "Web Design & Coding",
+      "studyType": "Associate",
+      "startDate": "2018-01-01",
+      "endDate": "2021-10-01"
+    }
+  ],
+  "certificates": [
+    {
+      "issuer": "The Linux Foundation",
+      "url": "https://www.credly.com/badges/6169d498-d0ae-4452-b527-052ae6cf7695?source=linked_in_profile",
+      "name": "JSNSD: OpenJS Node.js Services Developer",
+      "type": "Examination",
+      "date": "2021-07-01"
+    },
+    {
+      "issuer": "IBM",
+      "url": "https://coursera.org/verify/8PK8MXPU9ELA",
+      "name": "Introduction to Containers w/ Docker, Kubernetes and OpenShift",
+      "type": "Course",
+      "date": "2021-02-01"
+    },
+    {
+      "issuer": "Stanford University",
+      "url": "http://coursera.org/verify/HZLLFVQGWV2F",
+      "name": "Machine Learning",
+      "type": "Course",
+      "date": "2021-01-01"
+    },
+    {
+      "issuer": "LinkedIn",
+      "url": "https://www.linkedin.com/learning/certificates/5b97890ed948186d333b5f14a600cd20c6519983dff991620f9eb7ab310dc6a3?trk=backfilled_certificate",
+      "name": "Blockchain Basics",
+      "type": "Course",
+      "date": "2020-12-01"
+    },
+    {
+      "issuer": "University at Buffalo & The State University of New York",
+      "url": "http://coursera.org/verify/specialization/M93H5QESPSY4",
+      "name": "Blockchain Specialization",
+      "type": "Course",
+      "date": "2020-12-01"
+    },
+    {
+      "issuer": "Intel Corporation",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/PTZK4U9A4M46",
+      "name": "Fundamentals of Parallelism on Intel Architecture",
+      "type": "Course",
+      "date": "2020-12-01"
+    },
+    {
+      "issuer": "T.C. MİLLİ EĞİTİM BAKANLIĞI",
+      "name": "Object Oriented Programming",
+      "type": "Course",
+      "date": "2014-02-01"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Microservices",
+      "level": "Senior",
+      "keywords": ["NodeJS", "Go", "Kafka", "Redis"]
+    },
+    {
+      "name": "Databases",
+      "level": "Senior",
+      "keywords": ["PostgreSQL", "MongoDB", "DynamoDB"]
+    },
+    {
+      "name": "DApps",
+      "level": "Senior",
+      "keywords": ["EVM", "IPFS", "Cryptography"]
+    },
+    {
+      "name": "Machine Learning",
+      "level": "Mid",
+      "keywords": ["NLP", "Vector Databases"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Upper Intermediate"
+    },
+    {
+      "language": "German",
+      "fluency": "Beginner"
+    },
+    {
+      "language": "Turkish",
+      "fluency": "Native"
+    }
+  ],
+  "interests": [
+    {
+      "name": "FPGA"
+    },
+    {
+      "name": "3D Printers"
+    },
+    {
+      "name": "Biking"
+    },
+    {
+      "name": "OpenSource"
+    }
+  ],
+  "references": [
+    {
+      "name": "Cruz Molina",
+      "title": "Senior Blockchain Engineer",
+      "work": "The Walt Disney Company",
+      "contact": "+1 831-854-7359"
+    },
+    {
+      "name": "Paul Depraz",
+      "title": "Chief Technology Officer",
+      "work": "Sovereign Nature Initiative",
+      "contact": "+49 3727 6596470"
+    },
+    {
+      "name": "Hasan Tokatlı",
+      "title": "Research Assistant",
+      "work": "Yıldız Technical University",
+      "contact": "+90 535 456 6046"
+    }
+  ]
+}
